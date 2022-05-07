@@ -19,8 +19,17 @@ from adafruit_seesaw.seesaw import Seesaw
 ss = Seesaw(i2c, addr=0x36)
 
 from machine import Pin
-led = Pin(22, Pin.OUT)
+pump = Pin(22, Pin.OUT)
+level = 400
 
-def status(): 
+def status():
     print(ss.moisture_read())
     print(ss.get_temp())
+
+def pump_water():
+    while True:
+        while ss.moisture_read() < level:
+            pump.on()
+            time.sleep(0.5)
+        time.sleep(1.0)
+        pump.off()
