@@ -28,8 +28,9 @@ def status():
 
 def pump_water():
     while True:
-        while ss.moisture_read() < level:
+        if ss.moisture_read() < level:
+            print(ss.moisture_read())
             pump.on()
-            time.sleep(0.5)
-        time.sleep(1.0)
-        pump.off()
+            time.sleep(2.5)
+            pump.off()
+        time.sleep(100.0)
