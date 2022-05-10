@@ -1,3 +1,3 @@
 import test
 
-#test.pump_water()
+test.pump_water()
