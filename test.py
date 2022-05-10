@@ -34,3 +34,9 @@ def pump_water():
             time.sleep(2.5)
             pump.off()
         time.sleep(100.0)
+
+def prime_pump():
+    pump.on()
+    time.sleep(3)
+    pump.off()
+    time.sleep(0.5)
