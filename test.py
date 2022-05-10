@@ -21,10 +21,14 @@ ss = Seesaw(i2c, addr=0x36)
 from machine import Pin
 pump = Pin(22, Pin.OUT)
 level = 990
+moisture = ss.moisture_read()
 
 def status():
     print(ss.moisture_read())
     print(ss.get_temp())
+
+def water_level():
+    print(moisture)
 
 def pump_water():
     while True:
