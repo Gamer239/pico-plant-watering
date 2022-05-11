@@ -1,0 +1,1 @@
+https://micropython.org/resources/firmware/rp2-pico-20220117-v1.18.uf2
